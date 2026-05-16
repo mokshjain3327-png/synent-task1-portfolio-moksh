@@ -752,6 +752,73 @@
       </div>
     </div>
   </section>
+   <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label reveal">Say Hello</div>
+    <h2 class="section-title reveal">Let's work<br>together.</h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>I'm actively looking for internship opportunities in web development, AI, or networking. If you have a project or role that fits, I'd love to connect!</p>
+        <div class="contact-links">
+          <a href="mailto:mokshjain3327@gmail.com" class="contact-link">
+            <span class="contact-link-icon">✉️</span>
+            mokshjain3327@gmail.com
+          </a>
+          <a href="tel:+918369042773" class="contact-link">
+            <span class="contact-link-icon">📞</span>
+            +91 83690 42773
+          </a>
+          <a href="https://github.com/mokshjain3327-png/projects" target="_blank" class="contact-link">
+            <span class="contact-link-icon">💻</span>
+            github.com/mokshjain3327-png
+          </a>
+          <a class="contact-link">
+            <span class="contact-link-icon">📍</span>
+            Virar (West), Mumbai, Maharashtra
+          </a>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <h3>Open to<br>Opportunities</h3>
+        <p>B.Sc. IT · K.C. College · Batch of 2027<br>Available for internships & freelance projects.</p>
+        <a href="mailto:mokshjain3327@gmail.com" class="btn">Send Me a Mail →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>Moksh Jain</span> · Built with HTML & CSS · Virar, Mumbai</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 
 </html>
